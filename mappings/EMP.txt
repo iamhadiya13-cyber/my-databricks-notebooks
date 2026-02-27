@@ -1,0 +1,15 @@
+============================================================
+MAPPING  : EMP
+PROJECT  : test  |  FOLDER: First Folder
+============================================================
+
+SOURCE   : TRG_EMP (DATASTORE)
+TARGET   : EMPLOYEES (DATASTORE)
+
+COLUMNS (11):
+  FIRST_NAME, JOB_ID, PHONE_NUMBER, COMMISSION_PCT, LAST_NAME, EMAIL, MANAGER_ID, HIRE_DATE, SALARY, DEPARTMENT_ID, EMPLOYEE_ID
+
+────────────────────────────────────────────────────────────
+SQL:
+────────────────────────────────────────────────────────────
+-- No session log SQL found for this mapping
