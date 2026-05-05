@@ -1,0 +1,121 @@
+SCEN_TASK_NO in {1}
+
+OdiOSCommand "-CAPTURE_OUT_STREAM=ON_ERROR,10,50" "-CAPTURE_ERR_STREAM=ON_ERROR,10,50"
+dir /a /b D:\ODI\db > D:\ODI\names\names.csv
+SCEN_TASK_NO in {2}
+
+TRUNCATE TABLE ODI_TRG.LOG_TABLE
+SCEN_TASK_NO in {3}
+
+ALTER SEQUENCE ODI_TRG.FILE_SEQUENCE RESTART START WITH 1
+SCEN_TASK_NO in {4}
+
+SELECT COUNT(*) FROM ODI_TRG.LOG_TABLE
+SCEN_TASK_NO in {5}
+
+SELECT #TEST.V_CNT + 1 FROM DUAL
+SCEN_TASK_NO in {6}
+
+SELECT NAME FROM ODI_TRG.LOG_TABLE 
+WHERE ID=#TEST.V_CNT
+SCEN_TASK_NO in {10}
+
+
+SCEN_TASK_NO in {10}
+
+
+SCEN_TASK_NO in {20}
+
+
+SCEN_TASK_NO in {20}
+
+
+SCEN_TASK_NO in {30}
+
+
+drop table ODI_TRG.C$_0NAM
+ 
+SCEN_TASK_NO in {30}
+
+  
+SCEN_TASK_NO in {40}
+
+
+create table ODI_TRG.C$_0NAM
+(
+  C1 VARCHAR2(50)
+)
+ 
+SCEN_TASK_NO in {40}
+
+import java.sql as sql
+import java.lang as lang
+# Connect to the Source Database ie the one that hosts the journalized tables
+myCon = odiRef.getJDBCConnection("DEST")
+  
+SCEN_TASK_NO in {50}
+
+
+SCEN_TASK_NO in {50}
+
+drop table ODI_TRG.C$_0COM  
+SCEN_TASK_NO in {60}
+
+
+SCEN_TASK_NO in {60}
+
+drop view ODI_TRG.C$_0COM  
+SCEN_TASK_NO in {70}
+
+SELECT 
+  NAM.C1  C1   
+FROM
+  D:\ODI\names/names.csv NAM     
+/*$$SNPS_START_KEYSNP$CRDWG_TABLESNP$CRTABLE_NAME=NAMESSNP$CRLOAD_FILE=D:\ODI\names/names.csvSNP$CRFILE_FORMAT=DSNP$CRFILE_SEP_FIELD=0x0009SNP$CRFILE_SEP_LINE=0x000ASNP$CRFILE_FIRST_ROW=0SNP$CRFILE_ENC_FIELD=SNP$CRFILE_DEC_SEP=SNP$CRSNP$CRDWG_COLSNP$CRCOL_NAME=C1SNP$CRTYPE_NAME=STRINGSNP$CRORDER=1SNP$CRLENGTH=50SNP$CRPRECISION=50SNP$CRACTION_ON_ERROR=NULLSNP$CR$$SNPS_END_KEY*/
+ 
+
+INSERT INTO ODI_TRG.C$_0NAM (
+      C1 
+      )
+      VALUES(  
+       :C1 
+      )
+ 
+SCEN_TASK_NO in {70}
+
+create or replace directory dat_dir AS 'D:\ODI\db'  
+SCEN_TASK_NO in {80}
+
+
+SCEN_TASK_NO in {80}
+
+  
+SCEN_TASK_NO in {90}
+
+
+INSERT 
+  /*+  APPEND PARALLEL  */ 
+  INTO ODI_TRG.LOG_TABLE
+  (
+    ID ,
+    NAME 
+  ) 
+SELECT 
+  :TEST.FILE_SEQUENCE_NEXTVAL ,
+  NAM_A.C1  
+FROM 
+  ODI_TRG.C$_0NAM NAM_A   
+SCEN_TASK_NO in {90}
+
+
+SCEN_TASK_NO in {100}
+
+
+SCEN_TASK_NO in {110}
+
+
+SCEN_TASK_NO in {120}
+
+
+drop table ODI_TRG.C$_0NAM
+ 

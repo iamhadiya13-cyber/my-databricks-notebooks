@@ -1,0 +1,41 @@
+SCEN_TASK_NO in {1}
+
+OdiOSCommand "-CAPTURE_OUT_STREAM=ON_ERROR,10,50" "-CAPTURE_ERR_STREAM=ON_ERROR,10,50"
+dir /a /b D:\ODI\db > D:\ODI\names\names.csv
+SCEN_TASK_NO in {2}
+
+TRUNCATE TABLE ODI_TRG.LOG_TABLE
+SCEN_TASK_NO in {3}
+
+ALTER SEQUENCE ODI_TRG.FILE_SEQUENCE RESTART START WITH 1
+SCEN_TASK_NO in {10}
+
+
+SCEN_TASK_NO in {20}
+
+
+SCEN_TASK_NO in {30}
+
+  
+SCEN_TASK_NO in {40}
+
+import java.sql as sql
+import java.lang as lang
+# Connect to the Source Database ie the one that hosts the journalized tables
+myCon = odiRef.getJDBCConnection("DEST")
+  
+SCEN_TASK_NO in {50}
+
+drop table ODI_TRG.C$_0NAM  
+SCEN_TASK_NO in {60}
+
+drop view ODI_TRG.C$_0NAM  
+SCEN_TASK_NO in {70}
+
+create or replace directory dat_dir AS 'D:\ODI\names'  
+SCEN_TASK_NO in {80}
+
+  
+SCEN_TASK_NO in {90}
+
+
